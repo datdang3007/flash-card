@@ -1,0 +1,834 @@
+[
+  {
+    "text": "あ",
+    "answer": "-a"
+  },
+  {
+    "text": "い",
+    "answer": "-i"
+  },
+  {
+    "text": "う",
+    "answer": "-u"
+  },
+  {
+    "text": "え",
+    "answer": "-e"
+  },
+  {
+    "text": "お",
+    "answer": "-o"
+  },
+  {
+    "text": "か",
+    "answer": "-ka"
+  },
+  {
+    "text": "き",
+    "answer": "-ki"
+  },
+  {
+    "text": "く",
+    "answer": "-ku"
+  },
+  {
+    "text": "け",
+    "answer": "-ke"
+  },
+  {
+    "text": "こ",
+    "answer": "-ko"
+  },
+  {
+    "text": "さ",
+    "answer": "-sa"
+  },
+  {
+    "text": "し",
+    "answer": "-shi"
+  },
+  {
+    "text": "す",
+    "answer": "-su"
+  },
+  {
+    "text": "せ",
+    "answer": "-se"
+  },
+  {
+    "text": "そ",
+    "answer": "-so"
+  },
+  {
+    "text": "た",
+    "answer": "-ta"
+  },
+  {
+    "text": "ち",
+    "answer": "-chi"
+  },
+  {
+    "text": "つ",
+    "answer": "-tsu"
+  },
+  {
+    "text": "て",
+    "answer": "-te"
+  },
+  {
+    "text": "と",
+    "answer": "-to"
+  },
+  {
+    "text": "な",
+    "answer": "-na"
+  },
+  {
+    "text": "に",
+    "answer": "-ni"
+  },
+  {
+    "text": "ぬ",
+    "answer": "-nu"
+  },
+  {
+    "text": "ね",
+    "answer": "-ne"
+  },
+  {
+    "text": "の",
+    "answer": "-no"
+  },
+  {
+    "text": "は",
+    "answer": "-ha"
+  },
+  {
+    "text": "ひ",
+    "answer": "-hi"
+  },
+  {
+    "text": "ふ",
+    "answer": "-fu"
+  },
+  {
+    "text": "へ",
+    "answer": "-he"
+  },
+  {
+    "text": "ほ",
+    "answer": "-ho"
+  },
+  {
+    "text": "ま",
+    "answer": "-ma"
+  },
+  {
+    "text": "み",
+    "answer": "-mi"
+  },
+  {
+    "text": "む",
+    "answer": "-mu"
+  },
+  {
+    "text": "め",
+    "answer": "-me"
+  },
+  {
+    "text": "も",
+    "answer": "-mo"
+  },
+  {
+    "text": "や",
+    "answer": "-ya"
+  },
+  {
+    "text": "ゆ",
+    "answer": "-yu"
+  },
+  {
+    "text": "よ",
+    "answer": "-yo"
+  },
+  {
+    "text": "ら",
+    "answer": "-ra"
+  },
+  {
+    "text": "り",
+    "answer": "-ri"
+  },
+  {
+    "text": "る",
+    "answer": "-ru"
+  },
+  {
+    "text": "れ",
+    "answer": "-re"
+  },
+  {
+    "text": "ろ",
+    "answer": "-ro"
+  },
+  {
+    "text": "わ",
+    "answer": "-wa"
+  },
+  {
+    "text": "を",
+    "answer": "-wo"
+  },
+  {
+    "text": "ん",
+    "answer": "-n"
+  },
+  {
+    "text": "が",
+    "answer": "-ga"
+  },
+  {
+    "text": "ぎ",
+    "answer": "-gi"
+  },
+  {
+    "text": "ぐ",
+    "answer": "-gu"
+  },
+  {
+    "text": "げ",
+    "answer": "-ge"
+  },
+  {
+    "text": "ご",
+    "answer": "-go"
+  },
+  {
+    "text": "ざ",
+    "answer": "-za"
+  },
+  {
+    "text": "じ",
+    "answer": "-ji"
+  },
+  {
+    "text": "ず",
+    "answer": "-zu"
+  },
+  {
+    "text": "ぜ",
+    "answer": "-ze"
+  },
+  {
+    "text": "ぞ",
+    "answer": "-zo"
+  },
+  {
+    "text": "だ",
+    "answer": "-da"
+  },
+  {
+    "text": "ぢ",
+    "answer": "-ji"
+  },
+  {
+    "text": "づ",
+    "answer": "-zu"
+  },
+  {
+    "text": "で",
+    "answer": "-de"
+  },
+  {
+    "text": "ど",
+    "answer": "-do"
+  },
+  {
+    "text": "ば",
+    "answer": "-ba"
+  },
+  {
+    "text": "び",
+    "answer": "-bi"
+  },
+  {
+    "text": "ぶ",
+    "answer": "-bu"
+  },
+  {
+    "text": "べ",
+    "answer": "-be"
+  },
+  {
+    "text": "ぼ",
+    "answer": "-bo"
+  },
+  {
+    "text": "ぱ",
+    "answer": "-pa"
+  },
+  {
+    "text": "ぴ",
+    "answer": "-pi"
+  },
+  {
+    "text": "ぷ",
+    "answer": "-pu"
+  },
+  {
+    "text": "ぺ",
+    "answer": "-pe"
+  },
+  {
+    "text": "ぽ",
+    "answer": "-po"
+  },
+  {
+    "text": "きゃ",
+    "answer": "-kya"
+  },
+  {
+    "text": "きゅ",
+    "answer": "-kyu"
+  },
+  {
+    "text": "きょ",
+    "answer": "-kyo"
+  },
+  {
+    "text": "しゃ",
+    "answer": "-sha"
+  },
+  {
+    "text": "しゅ",
+    "answer": "-shu"
+  },
+  {
+    "text": "しょ",
+    "answer": "-sho"
+  },
+  {
+    "text": "ちゃ",
+    "answer": "-cha"
+  },
+  {
+    "text": "ちゅ",
+    "answer": "-chu"
+  },
+  {
+    "text": "ちょ",
+    "answer": "-cho"
+  },
+  {
+    "text": "にゃ",
+    "answer": "-nya"
+  },
+  {
+    "text": "にゅ",
+    "answer": "-nyu"
+  },
+  {
+    "text": "にょ",
+    "answer": "-nyo"
+  },
+  {
+    "text": "ひゃ",
+    "answer": "-hya"
+  },
+  {
+    "text": "ひゅ",
+    "answer": "-hyu"
+  },
+  {
+    "text": "ひょ",
+    "answer": "-hyo"
+  },
+  {
+    "text": "みゃ",
+    "answer": "-mya"
+  },
+  {
+    "text": "みゅ",
+    "answer": "-myu"
+  },
+  {
+    "text": "みょ",
+    "answer": "-myo"
+  },
+  {
+    "text": "りゃ",
+    "answer": "-rya"
+  },
+  {
+    "text": "りゅ",
+    "answer": "-ryu"
+  },
+  {
+    "text": "りょ",
+    "answer": "-ryo"
+  },
+  {
+    "text": "ぎゃ",
+    "answer": "-gya"
+  },
+  {
+    "text": "ぎゅ",
+    "answer": "-gyu"
+  },
+  {
+    "text": "ぎょ",
+    "answer": "-gyo"
+  },
+  {
+    "text": "じゃ",
+    "answer": "-ja"
+  },
+  {
+    "text": "じゅ",
+    "answer": "-ju"
+  },
+  {
+    "text": "じょ",
+    "answer": "-jo"
+  },
+  {
+    "text": "びゃ",
+    "answer": "-bya"
+  },
+  {
+    "text": "びゅ",
+    "answer": "-byu"
+  },
+  {
+    "text": "びょ",
+    "answer": "-byo"
+  },
+  {
+    "text": "ぴゃ",
+    "answer": "-pya"
+  },
+  {
+    "text": "ぴゅ",
+    "answer": "-pyu"
+  },
+  {
+    "text": "ぴょ",
+    "answer": "-pyo"
+  },
+  {
+    "text": "ア",
+    "answer": "-a"
+  },
+  {
+    "text": "イ",
+    "answer": "-i"
+  },
+  {
+    "text": "ウ",
+    "answer": "-u"
+  },
+  {
+    "text": "エ",
+    "answer": "-e"
+  },
+  {
+    "text": "オ",
+    "answer": "-o"
+  },
+  {
+    "text": "カ",
+    "answer": "-ka"
+  },
+  {
+    "text": "キ",
+    "answer": "-ki"
+  },
+  {
+    "text": "ク",
+    "answer": "-ku"
+  },
+  {
+    "text": "ケ",
+    "answer": "-ke"
+  },
+  {
+    "text": "コ",
+    "answer": "-ko"
+  },
+  {
+    "text": "サ",
+    "answer": "-sa"
+  },
+  {
+    "text": "シ",
+    "answer": "-shi"
+  },
+  {
+    "text": "ス",
+    "answer": "-su"
+  },
+  {
+    "text": "セ",
+    "answer": "-se"
+  },
+  {
+    "text": "ソ",
+    "answer": "-so"
+  },
+  {
+    "text": "タ",
+    "answer": "-ta"
+  },
+  {
+    "text": "チ",
+    "answer": "-chi"
+  },
+  {
+    "text": "ツ",
+    "answer": "-tsu"
+  },
+  {
+    "text": "テ",
+    "answer": "-te"
+  },
+  {
+    "text": "ト",
+    "answer": "-to"
+  },
+  {
+    "text": "ナ",
+    "answer": "-na"
+  },
+  {
+    "text": "ニ",
+    "answer": "-ni"
+  },
+  {
+    "text": "ヌ",
+    "answer": "-nu"
+  },
+  {
+    "text": "ネ",
+    "answer": "-ne"
+  },
+  {
+    "text": "ノ",
+    "answer": "-no"
+  },
+  {
+    "text": "ハ",
+    "answer": "-ha"
+  },
+  {
+    "text": "ヒ",
+    "answer": "-hi"
+  },
+  {
+    "text": "フ",
+    "answer": "-fu"
+  },
+  {
+    "text": "ヘ",
+    "answer": "-he"
+  },
+  {
+    "text": "ホ",
+    "answer": "-ho"
+  },
+  {
+    "text": "マ",
+    "answer": "-ma"
+  },
+  {
+    "text": "ミ",
+    "answer": "-mi"
+  },
+  {
+    "text": "ム",
+    "answer": "-mu"
+  },
+  {
+    "text": "メ",
+    "answer": "-me"
+  },
+  {
+    "text": "モ",
+    "answer": "-mo"
+  },
+  {
+    "text": "ヤ",
+    "answer": "-ya"
+  },
+  {
+    "text": "ユ",
+    "answer": "-yu"
+  },
+  {
+    "text": "ヨ",
+    "answer": "-yo"
+  },
+  {
+    "text": "ラ",
+    "answer": "-ra"
+  },
+  {
+    "text": "リ",
+    "answer": "-ri"
+  },
+  {
+    "text": "ル",
+    "answer": "-ru"
+  },
+  {
+    "text": "レ",
+    "answer": "-re"
+  },
+  {
+    "text": "ロ",
+    "answer": "-ro"
+  },
+  {
+    "text": "ワ",
+    "answer": "-wa"
+  },
+  {
+    "text": "ヲ",
+    "answer": "-wo"
+  },
+  {
+    "text": "ン",
+    "answer": "-n"
+  },
+  {
+    "text": "ガ",
+    "answer": "-ga"
+  },
+  {
+    "text": "ギ",
+    "answer": "-gi"
+  },
+  {
+    "text": "グ",
+    "answer": "-gu"
+  },
+  {
+    "text": "ゲ",
+    "answer": "-ge"
+  },
+  {
+    "text": "ゴ",
+    "answer": "-go"
+  },
+  {
+    "text": "ザ",
+    "answer": "-za"
+  },
+  {
+    "text": "ジ",
+    "answer": "-ji"
+  },
+  {
+    "text": "ズ",
+    "answer": "-zu"
+  },
+  {
+    "text": "ゼ",
+    "answer": "-ze"
+  },
+  {
+    "text": "ゾ",
+    "answer": "-zo"
+  },
+  {
+    "text": "ダ",
+    "answer": "-da"
+  },
+  {
+    "text": "ヂ",
+    "answer": "-ji"
+  },
+  {
+    "text": "ヅ",
+    "answer": "-zu"
+  },
+  {
+    "text": "デ",
+    "answer": "-de"
+  },
+  {
+    "text": "ド",
+    "answer": "-do"
+  },
+  {
+    "text": "バ",
+    "answer": "-ba"
+  },
+  {
+    "text": "ビ",
+    "answer": "-bi"
+  },
+  {
+    "text": "ブ",
+    "answer": "-bu"
+  },
+  {
+    "text": "ベ",
+    "answer": "-be"
+  },
+  {
+    "text": "ボ",
+    "answer": "-bo"
+  },
+  {
+    "text": "パ",
+    "answer": "-pa"
+  },
+  {
+    "text": "ピ",
+    "answer": "-pi"
+  },
+  {
+    "text": "プ",
+    "answer": "-pu"
+  },
+  {
+    "text": "ペ",
+    "answer": "-pe"
+  },
+  {
+    "text": "ポ",
+    "answer": "-po"
+  },
+  {
+    "text": "キャ",
+    "answer": "-kya"
+  },
+  {
+    "text": "キュ",
+    "answer": "-kyu"
+  },
+  {
+    "text": "キョ",
+    "answer": "-kyo"
+  },
+  {
+    "text": "シャ",
+    "answer": "-sha"
+  },
+  {
+    "text": "シュ",
+    "answer": "-shu"
+  },
+  {
+    "text": "ショ",
+    "answer": "-sho"
+  },
+  {
+    "text": "チャ",
+    "answer": "-cha"
+  },
+  {
+    "text": "チュ",
+    "answer": "-chu"
+  },
+  {
+    "text": "チョ",
+    "answer": "-cho"
+  },
+  {
+    "text": "ニャ",
+    "answer": "-nya"
+  },
+  {
+    "text": "ニュ",
+    "answer": "-nyu"
+  },
+  {
+    "text": "ニョ",
+    "answer": "-nyo"
+  },
+  {
+    "text": "ヒャ",
+    "answer": "-hya"
+  },
+  {
+    "text": "ヒュ",
+    "answer": "-hyu"
+  },
+  {
+    "text": "ヒョ",
+    "answer": "-hyo"
+  },
+  {
+    "text": "ミャ",
+    "answer": "-mya"
+  },
+  {
+    "text": "ミュ",
+    "answer": "-myu"
+  },
+  {
+    "text": "ミョ",
+    "answer": "-myo"
+  },
+  {
+    "text": "リャ",
+    "answer": "-rya"
+  },
+  {
+    "text": "リュ",
+    "answer": "-ryu"
+  },
+  {
+    "text": "リョ",
+    "answer": "-ryo"
+  },
+  {
+    "text": "ギャ",
+    "answer": "-gya"
+  },
+  {
+    "text": "ギュ",
+    "answer": "-gyu"
+  },
+  {
+    "text": "ギョ",
+    "answer": "-gyo"
+  },
+  {
+    "text": "ジャ",
+    "answer": "-ja"
+  },
+  {
+    "text": "ジュ",
+    "answer": "-ju"
+  },
+  {
+    "text": "ジョ",
+    "answer": "-jo"
+  },
+  {
+    "text": "ビャ",
+    "answer": "-bya"
+  },
+  {
+    "text": "ビュ",
+    "answer": "-byu"
+  },
+  {
+    "text": "ビョ",
+    "answer": "-byo"
+  },
+  {
+    "text": "ピャ",
+    "answer": "-pya"
+  },
+  {
+    "text": "ピュ",
+    "answer": "-pyu"
+  },
+  {
+    "text": "ピョ",
+    "answer": "-pyo"
+  }
+]
