@@ -1,189 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Flash Card Game</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <style>
-        .hidden { display: none; }
-        .progress-bar {
-            width: 100%;
-            background-color: #e0e0e0;
-            height: 10px;
-            border-radius: 5px;
-            overflow: hidden;
-            margin-top: 10px;
-        }
-        .progress {
-            height: 100%;
-            background-color: #3b82f6;
-            width: 0%;
-            transition: width linear; /* Default transition time */
-        }
-    </style>
-</head>
-<body class="bg-gray-100 flex flex-col justify-center items-center h-screen">
-
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-100 flex flex-col justify-center items-center h-screen">
     <!-- Configuration Panel -->
-    <div id="configPanel" class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
-        <h2 class="text-xl font-bold mb-4">Configure Flash Card Game</h2>
+    <div
+      id="configPanel"
+      class="bg-white p-8 rounded-lg shadow-md w-full max-w-md"
+    >
+      <h2 class="text-xl font-bold mb-4">Configure Flash Card Game</h2>
 
-        <label for="wordList" class="block text-sm font-medium text-gray-700">Word List (comma-separated):</label>
-        <input type="text" id="wordList" class="mt-1 p-2 border border-gray-300 rounded-md w-full" value="あ, い, う, え, お, か, き, く, け, こ">
+      <label for="wordList" class="block text-sm font-medium text-gray-700"
+        >Word List (comma-separated):</label
+      >
+      <input
+        type="text"
+        id="wordList"
+        class="mt-1 p-2 border border-gray-300 rounded-md w-full"
+        value="あ, い, う, え, お, か, き, く, け, こ"
+      />
 
-        <label for="displayTime" class="block text-sm font-medium text-gray-700 mt-4">Display Time (in seconds):</label>
-        <input type="number" id="displayTime" value="1.5" class="mt-1 p-2 border border-gray-300 rounded-md w-full" placeholder="E.g. 3">
+      <label
+        for="displayTime"
+        class="block text-sm font-medium text-gray-700 mt-4"
+        >Display Time (in seconds):</label
+      >
+      <input
+        type="number"
+        id="displayTime"
+        value="1.5"
+        class="mt-1 p-2 border border-gray-300 rounded-md w-full"
+        placeholder="E.g. 3"
+      />
 
-        <label for="showAnswer" class="block text-sm font-medium text-gray-700 mt-4">Show Answer (phonetic transcription):</label>
-        <input type="checkbox" id="showAnswer" class="mt-1">
+      <label
+        for="manualMode"
+        class="block text-sm font-medium text-gray-700 mt-4"
+        >Manual mode:</label
+      >
+      <input type="checkbox" id="manualMode" class="mt-1" />
 
-        <button id="startRandomizer" class="mt-6 bg-blue-500 text-white py-2 px-4 rounded-md w-full">Start Game</button>
+      <label
+        for="showAnswer"
+        class="block text-sm font-medium text-gray-700 mt-4"
+        >Show Answer (phonetic transcription):</label
+      >
+      <input type="checkbox" id="showAnswer" class="mt-1" />
+
+      <button
+        id="startRandomizer"
+        class="mt-6 bg-blue-500 text-white py-2 px-4 rounded-md w-full"
+      >
+        Start Game
+      </button>
     </div>
 
     <!-- Flash Card Display Area -->
     <div id="displayArea" class="hidden flex flex-col items-center">
-        <div id="displayWord" class="bg-white p-8 rounded-lg shadow-md text-9xl font-bold text-blue-600"></div>
+      <div class="bg-white p-8 rounded-lg shadow-md">
+        <!-- Display Word -->
+        <div id="displayWord" class="text-9xl font-bold text-blue-600"></div>
 
         <!-- Answer Display -->
-        <div id="displayAnswer" class="bg-white p-4 rounded-lg shadow-md text-3xl font-bold text-gray-700 hidden"></div>
+        <div
+          id="displayAnswer"
+          class="display-answer mt-8 text-center text-3xl font-bold text-gray-700 hidden"
+        ></div>
+      </div>
 
-        <!-- Progress Bar -->
-        <div class="progress-bar">
-            <div id="progress" class="progress"></div>
-        </div>
+      <!-- Progress Bar -->
+      <div class="progress-bar" id="progress-bar">
+        <div id="progress" class="progress"></div>
+      </div>
 
-        <button id="toggleGame" class="mt-8 bg-red-500 text-white py-2 px-4 rounded-md">Stop Game</button>
-        <button id="showConfig" class="mt-4 bg-gray-500 text-white py-2 px-4 rounded-md">Show Config</button>
+      <button
+        id="toggleGame"
+        class="mt-8 bg-red-500 text-white py-2 px-4 rounded-md"
+      >
+        Stop Game
+      </button>
+      <button
+        id="showConfig"
+        class="mt-4 bg-gray-500 text-white py-2 px-4 rounded-md"
+      >
+        Show Config
+      </button>
     </div>
 
-    <script>
-        $(document).ready(function() {
-            let interval;
-            let isRunning = false;
-            let wordArray = [];
-            let answerArray = ['-a', '-i', '-u', '-e', '-o', '-ka', '-ki', '-ku', '-ke', '-ko'];  // Answer array
-            let displayedWords = [];
-            let displayTime = 0;
-            let currentIndex = 0;
-            let showAnswer = false;
-
-            // Update progress bar with transition
-            function updateProgressBar() {
-                let progressElement = $('#progress');
-                progressElement.css({
-                    'transition': `width ${displayTime}s linear`, // Set transition to match displayTime
-                    'width': '100%'
-                });
-            }
-
-            // Clear the progress bar
-            function clearProgressBar() {
-                let progressElement = $('#progress');
-                progressElement.css({
-                    'transition': 'none',  // Remove transition temporarily
-                    'width': '0%'  // Reset width
-                });
-            }
-
-            // Random Word Display Logic
-            function randomizeWords() {
-                if (displayedWords.length === wordArray.length) {
-                    displayedWords = [];
-                }
-
-                let newWord;
-                do {
-                    currentIndex = Math.floor(Math.random() * wordArray.length);
-                    newWord = wordArray[currentIndex];
-                } while (displayedWords.includes(newWord));
-
-                $('#displayWord').text(newWord);
-                displayedWords.push(newWord);
-
-                if (showAnswer) {
-                    $('#displayAnswer').text(answerArray[currentIndex]).removeClass('hidden'); // Show answer
-                } else {
-                    $('#displayAnswer').addClass('hidden'); // Hide answer
-                }
-
-                clearProgressBar();  // Reset progress bar
-                setTimeout(updateProgressBar, 100);  // Start progress bar with a small delay
-
-                interval = setInterval(() => {
-                    if (displayedWords.length === wordArray.length) {
-                        displayedWords = [];
-                    }
-
-                    do {
-                        currentIndex = Math.floor(Math.random() * wordArray.length);
-                        newWord = wordArray[currentIndex];
-                    } while (displayedWords.includes(newWord));
-
-                    $('#displayWord').text(newWord);
-                    displayedWords.push(newWord);
-
-                    if (showAnswer) {
-                        $('#displayAnswer').text(answerArray[currentIndex]).removeClass('hidden'); // Show answer
-                    } else {
-                        $('#displayAnswer').addClass('hidden'); // Hide answer
-                    }
-
-                    clearProgressBar();  // Reset progress bar
-                    setTimeout(updateProgressBar, 100);  // Start progress bar with a small delay
-
-                }, displayTime * 1000);
-            }
-
-            function startGame() {
-                wordArray = $('#wordList').val().split(',').map(word => word.trim());
-                displayTime = parseFloat($('#displayTime').val());
-                showAnswer = $('#showAnswer').is(':checked');  // Get value of checkbox
-
-                if (wordArray.length > 0 && displayTime > 0) {
-                    $('#configPanel').addClass('hidden');
-                    $('#displayArea').removeClass('hidden');
-                    isRunning = true;
-                    displayedWords = [];
-                    randomizeWords();
-                } else {
-                    alert('Please provide a valid word list and display time.');
-                }
-            }
-
-            function stopGame() {
-                clearInterval(interval);
-                clearProgressBar();  // Stop progress bar
-                isRunning = false;
-            }
-
-            // Start game and hide config
-            $('#startRandomizer').click(function() {
-                startGame();
-                $('#toggleGame').text('Stop Game').removeClass('bg-green-500').addClass('bg-red-500');
-            });
-
-            // Toggle between stop and continue
-            $('#toggleGame').click(function() {
-                if (isRunning) {
-                    stopGame();
-                    $('#toggleGame').text('Continue Game').removeClass('bg-red-500').addClass('bg-green-500');
-                } else {
-                    randomizeWords();
-                    $('#toggleGame').text('Stop Game').removeClass('bg-green-500').addClass('bg-red-500');
-                    isRunning = true;
-                }
-            });
-
-            // Show config panel and hide flash cards
-            $('#showConfig').click(function() {
-                $('#displayArea').addClass('hidden');
-                $('#configPanel').removeClass('hidden');
-                stopGame();
-                $('#displayWord').text('');
-            });
-        });
-    </script>
-</body>
+    <script type="module" src="./main.js"></script>
+  </body>
 </html>
